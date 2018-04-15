@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Russo+One");
 html, body, #app {
   height: 100%;
-  background: linear-gradient(to bottom, #015492, #010134);
+  /* background: linear-gradient(to bottom, #015492, #010134); */
 }
 
 .logo {

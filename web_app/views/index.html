@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
 
 </head>
+
 <body>
     <div id="app">
-        <img src="https://vignette2.wikia.nocookie.net/ssb/images/f/f6/SF_Logo.png/revision/latest?cb=20150614010256" class="logo"
+        <img src="logo.svg" class="logo"
         />
         <div class="character">
             <div class="columns">
@@ -26,8 +27,6 @@
                             <div class="character__profile">
                                 <img :src="getActiveCharacter.largeImg" />
                             </div>
-                        </div>
-                        <div class="column has-text-left">
                             <div class="character__stats">
                                 <div class="name">{{getActiveCharacter.name}}</div>
                                 <div class="stat">
@@ -52,10 +51,41 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="column has-text-left" style="display:block;">
+                            <!-- Transpilation textfield -->
+                            <h1>
+                                <a href="https://jarble.github.io/transpiler/">Welcome to TIN</a>
+                            </h1>
+                            Code to translate:
+                            <br/>
+                            <textarea id="inputText" cols="40" rows="5" value="int i = 0+1;">public class Example{
+                              private int age;
+                              public Example(){
+                                  this.age = 1;
+                                  return add(3,4);
+                              }
+                              public static int add(int a, int b){
+                                  return a + b;
+                              }
+                          }</textarea>
+                            <br/>
+                            <input type="file" id="file-input" />
+                            <br/>Input language:
+                            <input type="text" id="inputLang" value="Detect language">
+                            <br/>Output language:
+                            <input type="text" id="outputLang" value="C">
+                            <br/>
+                            <button type="button" onclick="save_file()">Download file</button>
+
+
+                            <p id="outputText"></p>
+                            <!-- end -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="character-container">
             <div class="columns is-centered is-mobile is-gapless">
                 <div class="column" v-for="character in characters.slice(0,5)">
