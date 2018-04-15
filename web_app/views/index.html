@@ -17,7 +17,7 @@
 
 <body>
     <div id="app">
-        <img src="logo.svg" class="logo"
+        <img src="logo.svg" style="height:450px; width:400px; z-index:-1; opacity: 0.8"class="logo"
         />
         <div class="character">
             <div class="columns">
@@ -27,7 +27,7 @@
                             <div class="character__profile">
                                 <img :src="getActiveCharacter.largeImg" />
                             </div>
-                            <div class="character__stats">
+                            <div class="character__stats" style="visibility:hidden;">
                                 <div class="name">{{getActiveCharacter.name}}</div>
                                 <div class="stat">
                                     <span class="tag">Height</span> {{getActiveCharacter.height}}
@@ -51,13 +51,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="column has-text-left" style="display:block;">
+                        <div class="column has-text-left" style="position: absolute;display: block;left: 800px;">
                             <!-- Transpilation textfield -->
-                            <h1>
-                                <a href="https://jarble.github.io/transpiler/">Welcome to TIN</a>
-                            </h1>
-                            Code to translate:
                             <br/>
+                            <div class="mdInput full">
                             <textarea id="inputText" cols="40" rows="5" value="int i = 0+1;">public class Example{
                               private int age;
                               public Example(){
@@ -68,8 +65,8 @@
                                   return a + b;
                               }
                           }</textarea>
+                        </div>
                             <br/>
-                            <input type="file" id="file-input" />
                             <br/>Input language:
                             <input type="text" id="inputLang" value="Detect language">
                             <br/>Output language:

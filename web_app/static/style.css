@@ -50,7 +50,7 @@ html, body, #app {
   font-size: 40px;
   color: #FFF;
   font-family: "Russo One", sans-serif;
-  text-shadow: 0 0 3px yellow;
+  text-shadow: 0 0 3px black;
   text-transform: uppercase;
 }
 .character__stats .stat {
